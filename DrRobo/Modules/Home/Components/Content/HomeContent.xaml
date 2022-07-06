@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:constants="clr-namespace:DrRobo.Utils.Constants;assembly=DrRobo"
+    xmlns:svgImage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:utils="clr-namespace:DrRobo.Utils"
+    xmlns:navigation="clr-namespace:DrRobo.Modules.Shared.Components.NavigationBar"
+    xmlns:news="clr-namespace:DrRobo.Modules.Home.Components.News"
+    x:Class="DrRobo.Modules.Home.Components.Content.HomeContent"
+    BackgroundColor="{DynamicResource WhiteColor}">
+    <ScrollView
+        VerticalScrollBarVisibility="Never"
+        HorizontalScrollBarVisibility="Never">
+        <StackLayout
+            Spacing="20"
+            Margin="15,0,15,0">
+            <navigation:NavigationBarTransparentComponent
+                ImageProfile="True"
+                BackButton="False"
+                Title="Olá, Anderson!"
+                TitleStyle="{DynamicResource TitleBlack}"/>
+            <Frame
+                Padding="0"
+                WidthRequest="335"
+                HeightRequest="180"
+                CornerRadius="20"
+                HasShadow="False"
+                BackgroundColor="{DynamicResource DrRoboPrimaryColor}">
+                <Grid
+                    Margin="15"
+                    ColumnDefinitions="70*, 30*"
+                    RowDefinitions="70*, 20*">
+                    <StackLayout
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Grid.ColumnSpan="2">
+                        <Label
+                            Style="{DynamicResource TitleWhite}"
+                            Text="Cartão de Apresentação"/>
+                        <Label
+                            Style="{DynamicResource LabelStyleWhite14Bold}"
+                            Text="Dieta"/>
+                        <Label
+                            Style="{DynamicResource LabelStyleWhite14Bold}"
+                            Text="Osasco, SP"/>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Column="0"
+                        Grid.Row="1">
+                        <Label
+                            Style="{DynamicResource LabelStyleWhite14Bold}"
+                            Text="Frequencia cardiaca"/>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Column="1"
+                        Grid.Row="1">
+                        <Label
+                            Style="{DynamicResource LabelStyleWhite14Bold}"
+                            Text="Imc"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <Frame
+                Padding="0"
+                WidthRequest="335"
+                HeightRequest="80"
+                CornerRadius="15"
+                HasShadow="False">
+                <Frame.Background>
+                    <LinearGradientBrush >
+                        <GradientStop Offset="0.0" Color="{DynamicResource DrRoboPrimaryColor}" />
+                            <GradientStop Offset="1.0" Color="{DynamicResource DrRoboSecondaryColor}" />
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <Grid
+                    ColumnDefinitions="80*, 20*"
+                    Margin="15">
+                    <StackLayout
+                        Grid.Column="0">
+                        <Label
+                            Style="{DynamicResource LabelStyleWhite14Bold}"
+                            Text="Bem vindo!"/>
+                        <Label
+                            Style="{DynamicResource LabelStyleWhite14Bold}"
+                            Text="Como posso te ajudar hoje?"/>
+                    </StackLayout>
+                    <svgImage:SvgCachedImage
+                        Grid.Column="1"
+                        VerticalOptions="EndAndExpand"
+                        HorizontalOptions="EndAndExpand"
+                        Rotation="-40"
+                        Margin="0,0,-25,-25"
+                        WidthRequest="70"
+                        HeightRequest="70"
+                        Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconLogo}}" />
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ChatPresentationViewCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label
+                Style="{DynamicResource TitleBlack}"
+                Text="Dr robo responde"/>
+            <ScrollView
+                Orientation="Horizontal"
+                VerticalScrollBarVisibility="Never"
+                HorizontalScrollBarVisibility="Never">
+                <news:NewsComponent
+                    NewsRobot="{Binding NewsRobot}"/>
+            </ScrollView>
+        </StackLayout>
+    </ScrollView>
+</ContentView>

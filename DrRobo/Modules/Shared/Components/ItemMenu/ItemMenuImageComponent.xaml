@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:constants="clr-namespace:DrRobo.Utils.Constants;assembly=DrRobo"
+    xmlns:svgImage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:utils="clr-namespace:DrRobo.Utils"
+    x:Class="DrRobo.Modules.Shared.Components.ItemMenu.ItemMenuImageComponent"
+    x:Name="ItemMenuImage">
+    <StackLayout>
+        <Frame
+            Padding="0"
+            WidthRequest="160"
+            HeightRequest="110"
+            HasShadow="False"
+            CornerRadius="10"
+            BackgroundColor="{DynamicResource LightGrayColor}" >
+            <svgImage:SvgCachedImage
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                WidthRequest="80"
+                HeightRequest="80"
+                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconLogo}}"/>
+        </Frame>
+        <Label
+            HorizontalOptions="CenterAndExpand"
+            Style="{DynamicResource LabelStyleBlack14Bold}"
+            Text="Nutrição"/>
+        <Label
+            HorizontalOptions="CenterAndExpand"
+            Style="{DynamicResource LabelStyleGray12}"
+            Text="pergunte ao  dr robo"/>
+    </StackLayout>
+</ContentView>

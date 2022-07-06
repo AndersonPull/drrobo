@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:navigation="clr-namespace:DrRobo.Modules.Shared.Components.NavigationBar"
+    xmlns:Items="clr-namespace:DrRobo.Modules.Shared.Components.ItemMenu"
+    x:Class="DrRobo.Modules.Home.Components.Content.AboutUsContent"
+    BackgroundColor="{DynamicResource WhiteColor}">
+    <StackLayout>
+        <navigation:NavigationBarTransparentComponent
+            BackButton="False"
+            Title="Vamos nos conhecer melhor"
+            TitleStyle="{DynamicResource TitleBlack}"/>
+        <StackLayout
+            Margin="15,35,15,0"
+            Spacing="25">
+            <Items:ItemMenuComponent
+                Text="PodCast"/>
+            <Items:ItemMenuComponent
+                Text="Youtube"/>
+            <Items:ItemMenuComponent
+                Text="Pergunte ao robo"/>
+        </StackLayout>
+    </StackLayout>
+</ContentView>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:component="clr-namespace:DrRobo.Modules.Home.Components"
+    xmlns:content="clr-namespace:DrRobo.Modules.Home.Components.Content"
+    x:Class="DrRobo.Modules.Home.Views.TabbedPageView"
+    NavigationPage.HasNavigationBar="False"
+    NavigationPage.HasBackButton="False">
+    <ContentPage.Content>
+        <Grid RowDefinitions="90*, 10*">
+            <ContentView
+                IsVisible="{Binding IsLoadingInverse}"
+                Grid.Row="0"
+                x:Name="ContentBody">
+                <content:HomeContent/>
+            </ContentView>
+            <component:TabbedComponent Grid.Row="1"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

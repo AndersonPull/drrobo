@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="DrRobo.Modules.Shared.Components.NavigationBar.NavigationBarComponent"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:constants="clr-namespace:DrRobo.Utils.Constants;assembly=DrRobo"
+    xmlns:svgImage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:utils="clr-namespace:DrRobo.Utils"
+    x:Name="NavigationBar">
+    <Grid HeightRequest="{OnPlatform Android=70, iOS=90}">
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Offset="0.1" Color="{DynamicResource DrRoboPrimaryColor}" />
+                <GradientStop Offset="1.0" Color="{DynamicResource DrRoboSecondaryColor}" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="80*" />
+        </Grid.ColumnDefinitions>
+        <svgImage:SvgCachedImage
+            Grid.Column="0"
+            Margin="-30,0,0,15"
+            WidthRequest="20"
+            HeightRequest="20"
+            VerticalOptions="EndAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgBackWhiteIcon}}">
+            <svgImage:SvgCachedImage.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </svgImage:SvgCachedImage.GestureRecognizers>
+        </svgImage:SvgCachedImage>
+        <Label
+            Grid.Column="1"
+            Margin="-30,0,0,12"
+            VerticalOptions="EndAndExpand"
+            Style="{DynamicResource TitleWhite}"
+            Text="{Binding Title, Source={x:Reference NavigationBar}}" />
+    </Grid>
+</ContentView>

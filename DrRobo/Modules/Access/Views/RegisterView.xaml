@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="DrRobo.Modules.Access.Views.RegisterView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:navigation="clr-namespace:DrRobo.Modules.Shared.Components.NavigationBar"
+    xmlns:constants="clr-namespace:DrRobo.Utils.Constants;assembly=DrRobo"
+    xmlns:svgImage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:utils="clr-namespace:DrRobo.Utils"
+    xmlns:entry="clr-namespace:DrRobo.Modules.Shared.Components.Entry"
+    xmlns:dialog="clr-namespace:DrRobo.Modules.Shared.Components.Chat"
+    xmlns:converters="clr-namespace:DrRobo.Utils.Converters"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBoolConverter x:Key="inverseBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid
+        BackgroundColor="Transparent"
+        VerticalOptions="FillAndExpand"
+        RowDefinitions="10*, 75*, 15*">
+        <navigation:NavigationBarTransparentComponent
+            Grid.Row="0"
+            BackButton="True"
+            BackButtonBlack="True"
+            Title="Cadastro"
+            TitleStyle="{DynamicResource TitleBlack}"/>
+        <ScrollView
+            x:Name="ScrollChat"
+            Grid.Row="1"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand">
+            <StackLayout
+                Margin="15"
+                Spacing="40"
+                BindableLayout.ItemsSource="{Binding MessageList}"
+                ChildAdded="StackLayout_ChildAdded"
+                x:Name="StackLayoutChat">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <dialog:DialogBalloonBot
+                                IsVisible="{Binding DialogTypeTwo}"
+                                Text="{Binding Message}"/>
+                            <dialog:DialogBalloonUser
+                                x:Name="Dialog_User"
+                                IsVisible="{Binding DialogTypeOne}"
+                                Text="{Binding Message}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+        <Button
+            Grid.Row="2"
+            Margin="15,0,15,0"
+            VerticalOptions="Center"
+            x:Name="Button_Back"
+            Text="Voltar"
+            IsVisible="{Binding IsErrorMessage}"
+            Style="{DynamicResource PrimaryButton}"
+            Clicked="Button_Back_Clicked"/>
+        <Frame
+            IsVisible="{Binding IsErrorMessage, Converter={StaticResource inverseBoolConverter}}"
+            Grid.Row="2"
+            Margin="15,0,15,0"
+            Padding="0"
+            CornerRadius="25"
+            VerticalOptions="Center"
+            HasShadow="False"
+            BackgroundColor="{DynamicResource LightGrayColor}">
+            <Grid
+                HeightRequest="50"
+                ColumnDefinitions="80*,20*">
+                <entry:EntryComponent
+                    x:Name="Entry_Message"
+                    Grid.Column="0"
+                    Margin="15,0"
+                    FontSize="14"
+                    FontAttributes="Bold"
+                    TextColor="{DynamicResource BlackColor}"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Keyboard="Numeric"
+                    Text="{Binding TextMessage, Mode=TwoWay}"/>
+                <StackLayout Grid.Column="1">
+                    <Frame
+                        Margin="5"
+                        Padding="0"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="EndAndExpand"
+                        CornerRadius="20"
+                        HasShadow="False">
+                        <Frame.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Offset="0.1" Color="{DynamicResource DrRoboPrimaryColor}" />
+                                <GradientStop Offset="1.0" Color="{DynamicResource DrRoboSecondaryColor}" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <StackLayout
+                            HeightRequest="40"
+                            WidthRequest="40"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center">
+                            <svgImage:SvgCachedImage
+                                Rotation="180"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="CenterAndExpand"
+                                WidthRequest="20"
+                                HeightRequest="20"
+                                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgBackWhiteIcon}}" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding SendMessageCommand}"
+                                    Tapped="Send_Clicked"
+                                    NumberOfTapsRequired="1"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>

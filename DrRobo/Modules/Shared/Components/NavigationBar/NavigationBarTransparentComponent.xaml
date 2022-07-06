@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DrRobo.Modules.Shared.Components.NavigationBar.NavigationBarTransparentComponent"
+    xmlns:constants="clr-namespace:DrRobo.Utils.Constants;assembly=DrRobo"
+    xmlns:svgImage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:utils="clr-namespace:DrRobo.Utils"
+    x:Name="NavigationBarTransparent">
+    <StackLayout
+        Margin="0"
+        Orientation="Horizontal"
+        HeightRequest="70">
+        <svgImage:SvgCachedImage
+            Margin="15,0,-15,0"
+            IsVisible="{Binding BackButton, Source={x:Reference NavigationBarTransparent}}"
+            WidthRequest="20"
+            HeightRequest="20"
+            VerticalOptions="EndAndExpand"
+            HorizontalOptions="Start"
+            Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgBackWhiteIcon}}">
+            <svgImage:SvgCachedImage.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </svgImage:SvgCachedImage.GestureRecognizers>
+            <svgImage:SvgCachedImage.Triggers>
+                <DataTrigger
+                    Binding="{Binding BackButtonBlack, Source={x:Reference NavigationBarTransparent}}"
+                    TargetType="svgImage:SvgCachedImage"
+                    Value="True">
+                    <Setter Property="Source" Value="{utils:Markup Source={x:Static constants:SvgIcon.SvgBackBlackIcon}}"/>
+                </DataTrigger>
+            </svgImage:SvgCachedImage.Triggers>
+        </svgImage:SvgCachedImage>
+        <Label
+            Margin="15,0,0,-3"
+            VerticalOptions="EndAndExpand"
+            HorizontalOptions="StartAndExpand"
+            Style="{Binding TitleStyle, Source={x:Reference NavigationBarTransparent}}"
+            Text="{Binding Title, Source={x:Reference NavigationBarTransparent}}" />
+        <Frame
+            VerticalOptions="EndAndExpand"
+            HorizontalOptions="EndAndExpand"
+            Margin="0,0,15,-6"
+            Padding="0"
+            WidthRequest="40"
+            HeightRequest="40"
+            HasShadow="False"
+            CornerRadius="10"
+            IsClippedToBounds="True"
+            IsVisible="{Binding ImageProfile, Source={x:Reference NavigationBarTransparent}}">
+            <Image
+                Aspect="AspectFill"
+                Source="eu.png"/>
+        </Frame>
+    </StackLayout>
+</ContentView>

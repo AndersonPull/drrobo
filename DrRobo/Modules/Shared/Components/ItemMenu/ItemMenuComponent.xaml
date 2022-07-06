@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:constants="clr-namespace:DrRobo.Utils.Constants;assembly=DrRobo"
+    xmlns:svgImage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:utils="clr-namespace:DrRobo.Utils"
+    x:Class="DrRobo.Modules.Shared.Components.ItemMenu.ItemMenuComponent"
+    x:Name="ItemMenu">
+    <ContentView.Content>
+        <StackLayout
+            Orientation="Horizontal">
+            <Label
+                Style="{DynamicResource LabelStyleBlack14Bold}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="StartAndExpand"
+                Text="{Binding Text, Source={x:Reference ItemMenu}}"/>
+            <svgImage:SvgCachedImage
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="EndAndExpand"
+                WidthRequest="12"
+                HeightRequest="12"
+                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconArrowBlack}}" />
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CommandEvent, Source={x:Reference ItemMenu}}"/>
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

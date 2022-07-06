@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DrRobo.Modules.Home.Components.TabbedComponent"
+    xmlns:enums="clr-namespace:DrRobo.Modules.Home.Enums;assembly=DrRobo"
+    xmlns:constants="clr-namespace:DrRobo.Utils.Constants;assembly=DrRobo"
+    xmlns:utils="clr-namespace:DrRobo.Utils"
+    xmlns:svgImage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    BackgroundColor="{DynamicResource WhiteColor}">
+    <Grid
+        x:Name="GridMain"
+        HeightRequest="60">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="20*" />
+        </Grid.ColumnDefinitions>
+        <StackLayout
+            Grid.Column="0"
+            x:Name="StackHome"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <svgImage:SvgCachedImage
+                x:Name="SvgHome"
+                IsVisible="false"
+                WidthRequest="20"
+                HeightRequest="20"
+                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconMenuHomeBlack}}"/>
+            <svgImage:SvgCachedImage
+                x:Name="SvgHomeFull"
+                WidthRequest="20"
+                HeightRequest="20"
+                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconMenuHomeBlackFull}}"/>
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="TapGestureRecognizer_Tapped"
+                    Command="{Binding SetContentTypeCommand}"
+                    CommandParameter="{x:Static enums:HomePageType.Home}"                  />
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+            <StackLayout
+            Grid.Column="1"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <svgImage:SvgCachedImage
+                WidthRequest="30"
+                HeightRequest="30"
+                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconMenuChatBlack}}"/>
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ChatPresentationViewCommand}"/>
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+            <StackLayout
+            Grid.Column="2"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <svgImage:SvgCachedImage
+                x:Name="SvgDash"
+                WidthRequest="28"
+                HeightRequest="28"
+                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconMenuDashBlack}}"/>
+            <svgImage:SvgCachedImage
+                x:Name="SvgDashFull"
+                IsVisible="false"
+                WidthRequest="28"
+                HeightRequest="28"
+                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconMenuDashBlackFull}}"/>
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="TapGestureRecognizer_Tapped"
+                    Command="{Binding SetContentTypeCommand}"
+                    CommandParameter="{x:Static enums:HomePageType.Dash}"/>
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+            <StackLayout
+            Grid.Column="3"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <svgImage:SvgCachedImage
+                x:Name="SvgAboutUs"
+                WidthRequest="15"
+                HeightRequest="20"
+                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconMenuAboutUsBlack}}"/>
+            <svgImage:SvgCachedImage
+                x:Name="SvgAboutUsFull"
+                IsVisible="false"
+                WidthRequest="15"
+                HeightRequest="20"
+                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconMenuAboutUsBlackFull}}"/>
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="TapGestureRecognizer_Tapped"
+                    Command="{Binding SetContentTypeCommand}"
+                    CommandParameter="{x:Static enums:HomePageType.AboutUs}"/>
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+        <StackLayout
+            Grid.Column="4"
+            x:Name="StackProfile"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <svgImage:SvgCachedImage
+                IsVisible="true"
+                x:Name="SvgProfile"
+                WidthRequest="18"
+                HeightRequest="20"
+                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconMenuProfileBlack}}"/>
+            <svgImage:SvgCachedImage
+                IsVisible="false"
+                x:Name="SvgProfileFull"
+                WidthRequest="18"
+                HeightRequest="20"
+                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconMenuProfileBlackFull}}"/>
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="TapGestureRecognizer_Tapped"
+                    Command="{Binding SetContentTypeCommand}"
+                    CommandParameter="{x:Static enums:HomePageType.Profile}"/>
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+    </Grid>
+</ContentView>

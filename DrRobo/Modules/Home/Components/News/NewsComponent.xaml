@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DrRobo.Modules.Home.Components.News.NewsComponent"
+    x:Name="NewsView">
+    <StackLayout
+        Orientation="Horizontal"
+        Spacing="15"
+        BindableLayout.ItemsSource="{Binding NewsRobot, Source={x:Reference NewsView}}">
+        <BindableLayout.ItemTemplate>
+            <DataTemplate>
+                <StackLayout WidthRequest="320">
+                    <Frame
+                        Padding="0"
+                        VerticalOptions="Start"
+                        HorizontalOptions="Start"
+                        WidthRequest="320"
+                        HeightRequest="150"
+                        CornerRadius="15"
+                        HasShadow="False"
+                        IsClippedToBounds="True">
+                        <Image
+                            Aspect="AspectFill"
+                            Source="{Binding MainImage}"/>
+                    </Frame>
+                    <StackLayout
+                        Orientation="Horizontal"
+                        BindableLayout.ItemsSource="{Binding Tags}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                 <Frame
+                                    Padding="8"
+                                    CornerRadius="15"
+                                    HasShadow="False"
+                                    BackgroundColor="{DynamicResource DrRoboPrimaryColor}">
+                                    <Label
+                                        Style="{DynamicResource LabelStyleWhite12Bold}"
+                                        Text="{Binding Text}"/>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                    <Label
+                        Style="{DynamicResource TitleBlack}"
+                        Text="{Binding Title}"/>
+                    <Label
+                        Style="{DynamicResource LabelTextSpotlightGray}"
+                        Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}"/>
+                </StackLayout>
+            </DataTemplate>
+        </BindableLayout.ItemTemplate>
+    </StackLayout>
+</ContentView>

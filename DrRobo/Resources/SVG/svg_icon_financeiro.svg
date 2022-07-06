@@ -1,0 +1,30 @@
+<svg width="72" height="71" viewBox="0 0 72 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="svg_icon_financeiro">
+<path id="Ellipse 10" d="M57 41.5C57 57.2401 44.2401 70 28.5 70C12.7599 70 -1.40513e-05 57.2401 -1.40513e-05 41.5C-1.40513e-05 25.7599 12.7599 13 28.5 13C44.2401 13 57 25.7599 57 41.5Z" fill="#00DCEA"/>
+<g id="Ellipse 8" filter="url(#filter0_d_391_109)">
+<circle cx="36.5" cy="31.5" r="30.5" stroke="black" stroke-width="2" shape-rendering="crispEdges"/>
+</g>
+<ellipse id="Ellipse 9" cx="37" cy="31.5" rx="25" ry="26.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 5"/>
+<g id="Group 6">
+<path id="B" d="M31 39.7734V22H37.2256C39.3822 22 41.0179 22.415 42.1328 23.2451C43.2477 24.0671 43.8052 25.2756 43.8052 26.8706C43.8052 27.7414 43.5814 28.5104 43.1338 29.1777C42.6862 29.8369 42.0636 30.3211 41.2661 30.6304C42.1776 30.8582 42.8937 31.318 43.4146 32.0098C43.9435 32.7015 44.208 33.5479 44.208 34.5488C44.208 36.2578 43.6628 37.5518 42.5723 38.4307C41.4818 39.3096 39.9274 39.7572 37.9092 39.7734H31ZM34.6621 32.0342V36.8315H37.7993C38.6619 36.8315 39.3333 36.6281 39.8135 36.2212C40.3018 35.8062 40.5459 35.2365 40.5459 34.5122C40.5459 32.8846 39.7036 32.0586 38.019 32.0342H34.6621ZM34.6621 29.4463H37.3721C39.2194 29.4137 40.1431 28.6772 40.1431 27.2368C40.1431 26.4312 39.9071 25.8534 39.4351 25.5034C38.9712 25.1453 38.2347 24.9663 37.2256 24.9663H34.6621V29.4463Z" fill="black"/>
+<rect id="Rectangle 20" x="29" y="37" width="2" height="2.77" fill="black"/>
+<rect id="Rectangle 21" x="29" y="22" width="2" height="2.77" fill="black"/>
+<rect id="Rectangle 22" x="31" y="20" width="2" height="2" fill="black"/>
+<rect id="Rectangle 25" x="36" y="20" width="2" height="2" fill="black"/>
+<rect id="Rectangle 23" x="31" y="39" width="2" height="2.5" fill="black"/>
+<rect id="Rectangle 24" x="36" y="39" width="2" height="2.5" fill="black"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_391_109" x="1" y="0" width="71" height="71" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_391_109"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_391_109" result="shape"/>
+</filter>
+</defs>
+</svg>

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="DrRobo.Modules.Access.Views.AccessView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:constants="clr-namespace:DrRobo.Utils.Constants;assembly=DrRobo"
+    xmlns:svgImage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:utils="clr-namespace:DrRobo.Utils"
+    xmlns:converters="clr-namespace:DrRobo.Utils.Converters"
+    x:Name="Access"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBoolConverter x:Key="inverseBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout
+        VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand">
+        <Grid
+            Padding="15,55,15,40"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Offset="0.1" Color="{DynamicResource DrRoboPrimaryColor}" />
+                    <GradientStop Offset="1.0" Color="{DynamicResource DrRoboSecondaryColor}" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="45*" />
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+                <FlexLayout JustifyContent="Center">
+                    <svgImage:SvgCachedImage
+                        Margin="0,0,5,0"
+                        WidthRequest="38"
+                        HeightRequest="38"
+                        Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconLogo}}" />
+                    <Label
+                        VerticalTextAlignment="End"
+                        Style="{DynamicResource TitleWhite}"
+                        Text="Dr robo" />
+                </FlexLayout>
+                <Label
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Style="{DynamicResource CaptionWhite}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Estamos aqui para te ajudar com" />
+                            <Span Text="{x:Static constants:Constant.LabelBreakLine}" />
+                            <Span Text="os maiores conhecimentos no mundo" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+            <ActivityIndicator
+                Grid.Row="1"
+                IsRunning="true"
+                IsVisible="{Binding IsBusy, Mode=TwoWay}"
+                Color="{DynamicResource WhiteColor}" />
+            <StackLayout
+                IsVisible="{Binding IsBusy, Mode=TwoWay, Converter={StaticResource inverseBoolConverter}}"
+                Grid.Row="2"
+                VerticalOptions="End"
+                HorizontalOptions="CenterAndExpand">
+                <Frame
+                    Padding="0"
+                    WidthRequest="300"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    BorderColor="{DynamicResource WhiteColor}"
+                    BackgroundColor="Transparent"
+                    HasShadow="False">
+                    <StackLayout
+                        Orientation="Horizontal"
+                        HeightRequest="50">
+                        <Label
+                            Margin="15"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Start"
+                            Style="{DynamicResource CaptionWhite}"
+                            Text="Acessar sua conta" />
+                        <StackLayout
+                            VerticalOptions="Center"
+                            HorizontalOptions="EndAndExpand">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50*" />
+                                    <ColumnDefinition Width="50*" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout
+                                    Grid.Column="0"
+                                    Orientation="Horizontal"
+                                    Spacing="2">
+                                    <svgImage:SvgCachedImage
+                                        WidthRequest="10"
+                                        HeightRequest="10"
+                                        Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgBackWhiteIcon}}" />
+                                    <svgImage:SvgCachedImage
+                                        WidthRequest="10"
+                                        HeightRequest="10"
+                                        Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgBackWhiteIcon}}" />
+                                    <svgImage:SvgCachedImage
+                                        WidthRequest="10"
+                                        HeightRequest="10"
+                                        Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgBackWhiteIcon}}" />
+                                </StackLayout>
+                                <StackLayout Grid.ColumnSpan="2">
+                                    <SwipeView
+                                        BackgroundColor="Transparent"
+                                        AutomationId="SwipeView_login">
+                                        <SwipeView.RightItems>
+                                            <SwipeItems Mode="Execute">
+                                                <SwipeItem Command="{Binding PopupLoginCommand}" />
+                                            </SwipeItems>
+                                        </SwipeView.RightItems>
+                                        <FlexLayout
+                                            BackgroundColor="Transparent">
+                                            <Frame BackgroundColor="Transparent" />
+                                            <Frame
+                                                Padding="0"
+                                                WidthRequest="40"
+                                                HeightRequest="40"
+                                                CornerRadius="20"
+                                                HasShadow="False"
+                                                BackgroundColor="{DynamicResource WhiteColor}">
+                                                <StackLayout
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center">
+                                                    <svgImage:SvgCachedImage
+                                                        WidthRequest="20"
+                                                        HeightRequest="20"
+                                                        Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgBackBlueIcon}}" />
+                                                </StackLayout>
+                                            </Frame>
+                                        </FlexLayout>
+                                    </SwipeView>
+                                </StackLayout>
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Label
+                    Margin="0,15,0,0"
+                    VerticalOptions="End"
+                    HorizontalOptions="Center"
+                    Style="{DynamicResource CaptionWhiteBold}"
+                    Text="Criar uma conta">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoRegisterCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>

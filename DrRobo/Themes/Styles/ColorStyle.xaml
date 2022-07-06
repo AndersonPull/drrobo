@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    x:Class="DrRobo.Themes.Styles.ColorStyle"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Color x:Key="DrRoboPrimaryColor">#00C2D0</Color>
+    <Color x:Key="DrRoboSecondaryColor">#0095CC</Color>
+    <Color x:Key="WhiteColor">#FFFFFF</Color>
+    <Color x:Key="BlackColor">#121212</Color>
+    <Color x:Key="GrayColor">#646464</Color>
+    <Color x:Key="LightGrayColor">#F1F1F1</Color>
+    <Color x:Key="DisabledColor">#DEDEDE</Color>
+    <Color x:Key="InvalidColor">#FD5858</Color>
+    <Color x:Key="InvalidColorSecundary">#F00202</Color>
+    <Color x:Key="BackGround">#DEDEDE</Color>
+    <Color x:Key="Disabled">#DEDEDE</Color>
+
+    <Color x:Key="DrRoboPrimaryColorTransparent">#8000C2D0</Color>
+    <Color x:Key="DrRoboSecondaryColorTransparent">#BF0095CC</Color>
+
+</ResourceDictionary>

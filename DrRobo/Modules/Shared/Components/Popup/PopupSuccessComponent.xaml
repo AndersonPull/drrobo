@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage
+    x:Class="DrRobo.Modules.Shared.Components.Popup.PopupSuccessComponent"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:constants="clr-namespace:DrRobo.Utils.Constants;assembly=DrRobo"
+    xmlns:svgImage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:utils="clr-namespace:DrRobo.Utils"
+    x:Name="PopupError"
+    BackgroundColor="Transparent">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            PositionIn="Bottom"
+            PositionOut="Bottom"
+            DurationIn="300"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True" />
+    </pages:PopupPage.Animation>
+    <Frame
+        Margin="15"
+        Padding="10"
+        HeightRequest="150"
+        IsClippedToBounds="True"
+        CornerRadius="30"
+        HasShadow="False"
+        VerticalOptions="End"
+        HorizontalOptions="FillAndExpand"
+        BackgroundColor="{DynamicResource WhiteColor}">
+        <Frame.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Offset="0.1" Color="{DynamicResource DrRoboPrimaryColor}" />
+                <GradientStop Offset="1.0" Color="{DynamicResource DrRoboSecondaryColor}" />
+            </LinearGradientBrush>
+        </Frame.Background>
+        <StackLayout
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <svgImage:SvgCachedImage
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                WidthRequest="60"
+                HeightRequest="60"
+                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconSuccessWhite}}" />
+            <Label
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                Style="{DynamicResource CaptionWhiteBold}"
+                Text="{Binding Message, Source={x:Reference PopupError}}" />
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>

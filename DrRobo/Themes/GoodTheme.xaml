@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    x:Class="DrRobo.Themes.DrRoboTheme"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:styles="clr-namespace:DrRobo.Themes.Styles">
+    <ResourceDictionary.MergedDictionaries>
+        <styles:ColorStyle />
+    </ResourceDictionary.MergedDictionaries>
+    <Style
+        x:Key="TitleWhite"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style
+        x:Key="TitleBlack"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style
+        x:Key="CaptionWhite"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="None" />
+    </Style>
+    <Style
+        x:Key="CaptionWhiteBold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style
+        x:Key="HeaderLabelGray"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource GrayColor}" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontAttributes" Value="None" />
+    </Style>
+    <Style
+        x:Key="ErrorLabel"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource InvalidColor}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontAttributes" Value="None" />
+    </Style>
+    <Style
+        x:Key="LabelTextSpotlightGray"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource GrayColor}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="None" />
+    </Style>
+    <Style
+        x:Key="LabelChatUser"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style
+        x:Key="LabelChatBot"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style
+        x:Key="LabelStyleWhite12Bold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style
+        x:Key="LabelStyleBlack12Bold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style
+        x:Key="LabelStyleGray12"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource GrayColor}" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+    <Style
+        x:Key="LabelStyleWhite14Bold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style
+        x:Key="LabelStyleBlack14Bold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style
+        x:Key="PrimaryButton"
+        TargetType="Button">
+        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="CornerRadius" Value="25" />
+        <Setter Property="Background">
+            <LinearGradientBrush>
+                <GradientStop Offset="0.1" Color="{DynamicResource DrRoboPrimaryColor}" />
+                <GradientStop Offset="1.0" Color="{DynamicResource DrRoboSecondaryColor}" />
+            </LinearGradientBrush>
+        </Setter>
+    </Style>
+    <Style
+        x:Key="SecondaryButton"
+        TargetType="Button">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="CornerRadius" Value="25" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource WhiteColor}" />
+    </Style>
+    <Style
+        x:Key="DisabledButton"
+        TargetType="Button">
+        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="CornerRadius" Value="25" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource Disabled}" />
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="DrRobo.Modules.Shared.Components.Chat.DialogBalloonUser"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:frame="clr-namespace:DrRobo.Modules.Shared.Components.Frame"
+    x:Name="DialogUser">
+    <ContentView.Content>
+        <frame:FrameComponent
+            Padding="0"
+            CornerRadius="12,12,12,0"
+            HorizontalOptions="EndAndExpand"
+            VerticalOptions="Center"
+            HasShadow="False">
+            <frame:FrameComponent.Background>
+                <LinearGradientBrush>
+                    <GradientStop Offset="0.1" Color="{DynamicResource DrRoboPrimaryColor}" />
+                    <GradientStop Offset="1.0" Color="{DynamicResource DrRoboSecondaryColor}" />
+                </LinearGradientBrush>
+            </frame:FrameComponent.Background>
+            <Label
+                Margin="20,15,20,15"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="StartAndExpand"
+                Style="{DynamicResource LabelChatUser}"
+                Text="{Binding Text, Source={x:Reference DialogUser}}" />
+        </frame:FrameComponent>
+    </ContentView.Content>
+</ContentView>

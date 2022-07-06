@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage
+    x:Class="DrRobo.Modules.Access.Components.LoginPopup"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:constants="clr-namespace:DrRobo.Utils.Constants;assembly=DrRobo"
+    xmlns:svgImage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:utils="clr-namespace:DrRobo.Utils"
+    xmlns:entry="clr-namespace:DrRobo.Modules.Shared.Components.Entry"
+    BackgroundColor="Transparent">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            PositionIn="Bottom"
+            PositionOut="Bottom"
+            DurationIn="300"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True" />
+    </pages:PopupPage.Animation>
+    <StackLayout
+        Margin="0,0,0,-35"
+        VerticalOptions="End"
+        HorizontalOptions="FillAndExpand">
+        <Frame
+            Padding="0"
+            HeightRequest="240"
+            IsClippedToBounds="True"
+            CornerRadius="15"
+            HasShadow="False"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="{DynamicResource WhiteColor}"
+            VerticalOptions="Start">
+            <StackLayout>
+                <Grid
+                    x:Name="Grid_login"
+                    Margin="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80*" />
+                        <ColumnDefinition Width="20*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="30*" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="Digite seu CPF"
+                        Style="{DynamicResource HeaderLabelGray}" />
+                    <entry:EntryComponent
+                        x:Name="Entry_login"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        FontSize="20"
+                        TextColor="{DynamicResource GrayColor}"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Keyboard="Numeric"
+                        TextChanged="Entry_login_TextChanged"
+                        MaxLength="14"
+                        Mask="{x:Static constants:Mask.CPF}"/>
+                    <StackLayout
+                        Grid.Row="1"
+                        Grid.Column="1">
+                        <svgImage:SvgCachedImage
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="End"
+                            WidthRequest="25"
+                            HeightRequest="25"
+                            Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconCloseGray}}" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Cleen_entry_login_Clicked" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <Label
+                        x:Name="Label_CPF_error"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        IsVisible="False"
+                        Text="CPF invalido!"
+                        Style="{DynamicResource ErrorLabel}" />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Text="Lembrar CPF"
+                        VerticalOptions="Center"
+                        Style="{DynamicResource LabelTextSpotlightGray}" />
+                    <Switch
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                        OnColor="{DynamicResource DrRoboSecondaryColor}" />
+                    <StackLayout
+                        Grid.Row="4"
+                        Grid.ColumnSpan="2">
+                        <Button
+                            x:Name="Button_next"
+                            Text="Continuar"
+                            IsEnabled="False"
+                            Style="{DynamicResource DisabledButton}"
+                            Clicked="Button_Clicked" />
+                    </StackLayout>
+                </Grid>
+                <Grid
+                    x:Name="Grid_password"
+                    Margin="15"
+                    IsVisible="false">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="30*" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Text="Digite sua Senha"
+                        Style="{DynamicResource HeaderLabelGray}" />
+                    <entry:EntryComponent
+                        x:Name="Entry_password"
+                        Margin="-100,0,0,0"
+                        MaxLength="4"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Keyboard="Numeric"
+                        TextChanged="Entry_password_TextChanged"/>
+                    <StackLayout
+                        Grid.Row="1"
+                        Grid.RowSpan="3"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal"
+                        Spacing="25">
+                        <Frame
+                            x:Name="Frame_password_one"
+                            Padding="0"
+                            WidthRequest="20"
+                            HeightRequest="20"
+                            CornerRadius="10"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            HasShadow="False"
+                            BackgroundColor="{DynamicResource Disabled}" />
+                        <Frame
+                            x:Name="Frame_password_two"
+                            Padding="0"
+                            WidthRequest="20"
+                            HeightRequest="20"
+                            CornerRadius="10"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            HasShadow="False"
+                            BackgroundColor="{DynamicResource Disabled}" />
+                        <Frame
+                            x:Name="Frame_password_three"
+                            Padding="0"
+                            WidthRequest="20"
+                            HeightRequest="20"
+                            CornerRadius="10"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            HasShadow="False"
+                            BackgroundColor="{DynamicResource Disabled}" />
+                        <Frame
+                            x:Name="Frame_password_four"
+                            Padding="0"
+                            WidthRequest="20"
+                            HeightRequest="20"
+                            CornerRadius="10"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            HasShadow="False"
+                            BackgroundColor="{DynamicResource Disabled}" />
+                    </StackLayout>
+                    <StackLayout Grid.Row="4">
+                        <Button
+                            x:Name="Button_login"
+                            Text="Entrar"
+                            Style="{DynamicResource DisabledButton}"
+                            Clicked="Button_login_Clicked"/>
+                    </StackLayout>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Entry_password_Focus" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

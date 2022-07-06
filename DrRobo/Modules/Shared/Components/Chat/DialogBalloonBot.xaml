@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="DrRobo.Modules.Shared.Components.Chat.DialogBalloonBot"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:frame="clr-namespace:DrRobo.Modules.Shared.Components.Frame"
+     xmlns:constants="clr-namespace:DrRobo.Utils.Constants;assembly=DrRobo"
+    xmlns:svgImage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:utils="clr-namespace:DrRobo.Utils"
+    x:Name="DialogBot">
+    <ContentView.Content>
+        <StackLayout
+            Orientation="Horizontal"
+            Margin="0,0,60,0">
+            <Frame
+                Margin="0,60,0,0"
+                Padding="0"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="EndAndExpand"
+                CornerRadius="25"
+                HasShadow="False">
+                <Frame.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Offset="0.1" Color="{DynamicResource DrRoboPrimaryColor}" />
+                        <GradientStop Offset="1.0" Color="{DynamicResource DrRoboSecondaryColor}" />
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <StackLayout
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+                    <svgImage:SvgCachedImage
+                        Margin="0,0,-5,-5"
+                        Rotation="-40"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="50"
+                        HeightRequest="50"
+                        Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconLogo}}" />
+                </StackLayout>
+            </Frame>
+            <frame:FrameComponent
+                Padding="0"
+                CornerRadius="12,12,0,12"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Center"
+                HasShadow="False"
+                BackgroundColor="{DynamicResource LightGrayColor}">
+                <Label
+                    Margin="20,15,20,15"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Start"
+                    Style="{DynamicResource LabelChatBot}"
+                    Text="{Binding Text, Source={x:Reference DialogBot}}" />
+            </frame:FrameComponent>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

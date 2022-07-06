@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:navigation="clr-namespace:DrRobo.Modules.Shared.Components.NavigationBar"
+     xmlns:constants="clr-namespace:DrRobo.Utils.Constants;assembly=DrRobo"
+    xmlns:svgImage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:utils="clr-namespace:DrRobo.Utils"
+    xmlns:entry="clr-namespace:DrRobo.Modules.Shared.Components.Entry"
+    x:Class="DrRobo.Modules.Chat.Views.ChatView"
+    NavigationPage.HasNavigationBar="False">
+    <Grid
+        VerticalOptions="FillAndExpand"
+        RowDefinitions="10*, 70*, 20*">
+        <navigation:NavigationBarTransparentComponent
+            Grid.Row="0"
+            BackButton="True"
+            BackButtonBlack="True"
+            Title="Chat geral"
+            TitleStyle="{DynamicResource TitleBlack}"/>
+        <Frame
+            Grid.Row="2"
+            Margin="15,15,15,25"
+            Padding="0"
+            CornerRadius="25"
+            VerticalOptions="EndAndExpand"
+            HasShadow="False"
+            BackgroundColor="{DynamicResource LightGrayColor}">
+            <Grid HeightRequest="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80*" />
+                    <ColumnDefinition Width="20*" />
+                </Grid.ColumnDefinitions>
+                <entry:EntryComponent
+                    x:Name="Entry_Message"
+                    Mask="{Binding TypeMessage, Mode=TwoWay}"
+                    Grid.Column="0"
+                    Margin="15,0"
+                    FontSize="14"
+                    FontAttributes="Bold"
+                    TextColor="{DynamicResource BlackColor}"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Text="{Binding TextMessage, Mode=TwoWay}"/>
+                <StackLayout Grid.Column="1">
+                    <Frame
+                        Margin="5"
+                        Padding="0"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="EndAndExpand"
+                        CornerRadius="20"
+                        HasShadow="False">
+                        <Frame.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Offset="0.1" Color="{DynamicResource DrRoboPrimaryColor}" />
+                                <GradientStop Offset="1.0" Color="{DynamicResource DrRoboSecondaryColor}" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <StackLayout
+                            HeightRequest="40"
+                            WidthRequest="40"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center">
+                            <svgImage:SvgCachedImage
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="CenterAndExpand"
+                                WidthRequest="20"
+                                HeightRequest="20"
+                                Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconSendWhite}}" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SendMessageCommand}" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>

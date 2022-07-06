@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:navigation="clr-namespace:DrRobo.Modules.Shared.Components.NavigationBar"
+    xmlns:constants="clr-namespace:DrRobo.Utils.Constants;assembly=DrRobo"
+    xmlns:svgImage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:utils="clr-namespace:DrRobo.Utils"
+    x:Class="DrRobo.Modules.Home.Components.Content.DashContent"
+    BackgroundColor="{DynamicResource WhiteColor}">
+    <StackLayout>
+        <navigation:NavigationBarTransparentComponent
+            BackButton="False"
+            Title="DashBoard"
+            TitleStyle="{DynamicResource TitleBlack}"/>
+        <StackLayout
+            Margin="15"
+            Spacing="25">
+            <Grid
+                ColumnSpacing="20"
+                RowSpacing="20"
+                ColumnDefinitions="50*, 50*"
+                RowDefinitions="50*, 50*">
+                <StackLayout
+                    Grid.Column="0"
+                    Grid.Row="0">
+                    <Frame
+                        Padding="0"
+                        WidthRequest="160"
+                        HeightRequest="110"
+                        HasShadow="False"
+                        CornerRadius="10"
+                        BackgroundColor="{DynamicResource LightGrayColor}" >
+                        <svgImage:SvgCachedImage
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            WidthRequest="80"
+                            HeightRequest="80"
+                            Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconNutricao}}"/>
+                    </Frame>
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{DynamicResource LabelStyleBlack14Bold}"
+                        Text="Nutrição"/>
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{DynamicResource LabelStyleGray12}"
+                        Text="pergunte ao  dr robo"/>
+                </StackLayout>
+                <StackLayout
+                    Grid.Column="1"
+                    Grid.Row="0">
+                    <Frame
+                        Padding="0"
+                        WidthRequest="160"
+                        HeightRequest="110"
+                        HasShadow="False"
+                        CornerRadius="10"
+                        BackgroundColor="{DynamicResource LightGrayColor}" >
+                        <svgImage:SvgCachedImage
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            WidthRequest="80"
+                            HeightRequest="80"
+                            Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconPsicologia}}"/>
+                    </Frame>
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{DynamicResource LabelStyleBlack14Bold}"
+                        Text="Psicologia"/>
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{DynamicResource LabelStyleGray12}"
+                        Text="pergunte ao  dr robo"/>
+                </StackLayout>
+                <StackLayout
+                    Grid.Column="0"
+                    Grid.Row="1">
+                    <Frame
+                        Padding="0"
+                        WidthRequest="160"
+                        HeightRequest="110"
+                        HasShadow="False"
+                        CornerRadius="10"
+                        BackgroundColor="{DynamicResource LightGrayColor}" >
+                        <svgImage:SvgCachedImage
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            WidthRequest="120"
+                            HeightRequest="80"
+                            Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconPFisica}}"/>
+                    </Frame>
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{DynamicResource LabelStyleBlack14Bold}"
+                        Text="preparação fisica"/>
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{DynamicResource LabelStyleGray12}"
+                        Text="pergunte ao  dr robo"/>
+                </StackLayout>
+                <StackLayout
+                    Grid.Column="1"
+                    Grid.Row="1">
+                    <Frame
+                        Padding="0"
+                        WidthRequest="160"
+                        HeightRequest="110"
+                        HasShadow="False"
+                        CornerRadius="10"
+                        BackgroundColor="{DynamicResource LightGrayColor}" >
+                        <svgImage:SvgCachedImage
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            WidthRequest="80"
+                            HeightRequest="80"
+                            Source="{utils:Markup Source={x:Static constants:SvgIcon.SvgIconFinanceiro}}"/>
+                    </Frame>
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{DynamicResource LabelStyleBlack14Bold}"
+                        Text="Financeiro"/>
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{DynamicResource LabelStyleGray12}"
+                        Text="pergunte ao  dr robo"/>
+                </StackLayout>
+            </Grid>
+            <Frame
+                Padding="0"
+                VerticalOptions="Start"
+                HorizontalOptions="CenterAndExpand"
+                WidthRequest="335"
+                HeightRequest="90"
+                CornerRadius="15"
+                HasShadow="False"
+                IsClippedToBounds="True"
+                BackgroundColor="Transparent">
+                <Image
+                    Aspect="AspectFill"
+                    Source="propaganda.png"/>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+</ContentView>

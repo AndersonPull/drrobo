@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:navigation="clr-namespace:DrRobo.Modules.Shared.Components.NavigationBar"
+    x:Class="DrRobo.Modules.Chat.Views.ChatPresentationView"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="80*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Offset="0.1" Color="{DynamicResource DrRoboPrimaryColorTransparent}" />
+                    <GradientStop Offset="1.0" Color="{DynamicResource DrRoboSecondaryColorTransparent}" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <navigation:NavigationBarTransparentComponent
+                Grid.Row="0" />
+            <StackLayout
+                Grid.Row="1"
+                Padding="25"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand">
+                <Image
+                    Aspect="AspectFit"
+                    Source="baloes.png"/>
+                <Label
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Titulo Legal"
+                    Style="{DynamicResource TitleWhite}"/>
+                <Label
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Descricao legal sobre o chat e como ele pode te ajudar, entao isso vai ficao show!"
+                    Style="{DynamicResource CaptionWhite}"/>
+            </StackLayout>
+            <Button
+                Grid.Row="2"
+                VerticalOptions="EndAndExpand"
+                Margin="15,0,15,25"
+                Text="Começar"
+                Style="{DynamicResource SecondaryButton}"
+                Command="{Binding ChatViewCommand}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

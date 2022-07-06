@@ -1,0 +1,127 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>portable</DebugType>
+		<Optimize>true</Optimize>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+		<PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+		<PackageReference Include="MvvmLight" Version="5.4.1.1" />
+		<PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+		<PackageReference Include="Unity" Version="5.11.10" />
+		<PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+		<PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
+		<PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
+		<PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.14" />
+		<PackageReference Include="Refit" Version="6.1.15" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="AutoMapper" Version="8.1.0" />
+	</ItemGroup>
+
+    <ItemGroup>
+		<EmbeddedResource Include="Resources\*\.json" />
+		<EmbeddedResource Include="Resources\*\.otf" />
+		<EmbeddedResource Include="Resources\*\.svg" />
+		<EmbeddedResource Include="Resources\*\.gif" />
+		<EmbeddedResource Include="Resources\*\.png" />
+		<EmbeddedResource Include="Resources\SVG\svg_back_blue.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_back_white.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_close_gray.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_Alert.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_send_white.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_correct.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_menu_home_black.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_menu_chat_black.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_menu_dash_black.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_menu_about_us_black.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_menu_profile_black.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_menu_profile_black_full.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_menu_home_black_full.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_menu_about_us_black_full.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_menu_dash_black_full.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_arrow_black.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_logo.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_nutricao.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_psicologia.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_financeiro.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_back_black.svg" />
+		<EmbeddedResource Include="Resources\SVG\svg_icon_p_fisica.svg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\SVG\svg_back_blue.svg" />
+      <None Remove="Resources\SVG\svg_back_white.svg" />
+      <None Remove="Resources\SVG\svg_icon_close_gray.svg" />
+      <None Remove="Resources\SVG\svg_icon_Alert.svg" />
+      <None Remove="Resources\SVG\svg_icon_send_white.svg" />
+      <None Remove="Resources\SVG\Svg_icon_correct.svg" />
+      <None Remove="Modules\Access\Enums\" />
+      <None Remove="Resources\SVG\svg_icon_menu_home_black.svg" />
+      <None Remove="Modules\Home\Components\" />
+      <None Remove="Resources\SVG\svg_icon_menu_chat_black.svg" />
+      <None Remove="Resources\SVG\svg_icon_menu_dash_black.svg" />
+      <None Remove="Resources\SVG\svg_icon_menu_about_us_black.svg" />
+      <None Remove="Resources\SVG\svg_icon_menu_profile_black.svg" />
+      <None Remove="Modules\Home\Components\Content\" />
+      <None Remove="Modules\Home\Enums\" />
+      <None Remove="Modules\Chat\" />
+      <None Remove="Modules\Chat\Views\" />
+      <None Remove="Modules\Chat\ViewModels\" />
+      <None Remove="Resources\SVG\svg_icon_menu_profile_black_full.svg" />
+      <None Remove="Resources\SVG\svg_icon_menu_home_black_full.svg" />
+      <None Remove="Resources\SVG\svg_icon_menu_about_us_black_full.svg" />
+      <None Remove="Resources\SVG\svg_icon_menu_dash_black_full.svg" />
+      <None Remove="Resources\SVG\svg_icon_arrow_black.svg" />
+      <None Remove="Modules\Shared\Components\ItemMenu\" />
+      <None Remove="Resources\SVG\svg_icon_logo.svg" />
+      <None Remove="Modules\Home\Components\News\" />
+      <None Remove="Modules\Home\Model\" />
+      <None Remove="Resources\SVG\svg_icon_nutricao.svg" />
+      <None Remove="Resources\SVG\svg_icon_psicologia.svg" />
+      <None Remove="Resources\SVG\svg_icon_financeiro.svg" />
+      <None Remove="Resources\SVG\svg_back_black.svg" />
+      <None Remove="Resources\SVG\svg_icon_p_fisica.svg" />
+      <None Remove="Utils\Mapper\" />
+      <None Remove="AutoMapper" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Modules\Shared\Components\" />
+      <Folder Include="Modules\Shared\Components\Entry\" />
+      <Folder Include="Modules\Home\" />
+      <Folder Include="Modules\Home\Views\" />
+      <Folder Include="Modules\Home\ViewModels\" />
+      <Folder Include="Modules\Shared\Components\_ComponentModel\" />
+      <Folder Include="Modules\Shared\Components\_ComponentModel\EntryModel\" />
+      <Folder Include="Modules\Access\Services\" />
+      <Folder Include="Modules\Access\Models\" />
+      <Folder Include="Modules\Access\Services\Response\" />
+      <Folder Include="Modules\Access\Services\Request\" />
+      <Folder Include="Modules\Shared\Components\Popup\" />
+      <Folder Include="Utils\Converters\" />
+      <Folder Include="Modules\Shared\Components\NavigationBar\" />
+      <Folder Include="Modules\Shared\Components\Frame\" />
+      <Folder Include="Modules\Shared\Components\Chat\" />
+      <Folder Include="Modules\Access\Enums\" />
+      <Folder Include="Modules\Home\Components\" />
+      <Folder Include="Modules\Home\Components\Content\" />
+      <Folder Include="Modules\Home\Enums\" />
+      <Folder Include="Modules\Chat\" />
+      <Folder Include="Modules\Chat\Views\" />
+      <Folder Include="Modules\Chat\ViewModels\" />
+      <Folder Include="Modules\Shared\Components\ItemMenu\" />
+      <Folder Include="Modules\Home\Components\News\" />
+      <Folder Include="Modules\Home\Models\" />
+      <Folder Include="Utils\Mapper\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    </ItemGroup>
+</Project>
